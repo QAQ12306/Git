@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<TextView
+    android:id="@+id/txt01"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="15dp"
+    android:background="@drawable/bg_btn4"
+    android:text="为了更美好的明天！"
+    android:textSize="30sp"
+    android:gravity="center"
+    android:textColor="#660088"/>
+    <TextView
+        android:id="@+id/txt02"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/txt01"
+        android:background="#D2B5DB"
+        android:text="好好努力！"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="#FC5411"/>
+    <TextView
+        android:id="@+id/txt03"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/txt02"
+        android:background="#13B958"
+        android:text="哈哈哈哈！"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="#9013B9"/>
+</RelativeLayout>
