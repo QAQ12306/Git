@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ButtonActivity" />
-        <activity android:name=".TextViewActivity"></activity>
+        <activity android:name=".TextViewActivity" />
+        <activity android:name=".EdittextActivity" />
+        <activity android:name=".TOTActivity" />
+        <activity android:name=".QWActivity"></activity>
     </application>
 
 </manifest>

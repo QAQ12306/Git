@@ -22,5 +22,15 @@
         android:text="button"
         android:textColor="#FFE91912"
         android:background="#FF12B7E9"/>
+    <Button
+        android:id="@+id/btn_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Editext"
+        android:textColor="#4FE2AF"
+        android:background="#847599"
+        android:gravity="center"
+        android:textAllCaps="true"/>
 
 </LinearLayout>
