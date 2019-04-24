@@ -16,7 +16,6 @@ import java.util.List;
 public
 class MainActivity extends AppCompatActivity {
     private List<Article> articleList=new ArrayList<>();
-/*private Context context;*/
 private String[] data={
         "a","b","c","a1","b2","c3","a4","b5","c6","a7","b8","c9"
 };
@@ -31,8 +30,8 @@ private String[] data={
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick(AdapterView<?> parent, View view,int position,long id){
                 Article article =articleList.get(position);
-                Intent intent=new Intent(MainActivity.this,ArticleDetailActivity.class);
-               startActivities(new Intent[]{intent});
+                Intent intent = new Intent(MainActivity.this,ArticleDetailActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -52,4 +51,5 @@ private String[] data={
             articleList.add(f);
         }
     }
+
 }

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/article_name1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/biaoti"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+
+            <ImageView
+                android:id="@+id/article_image1"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/ic_test"
+                android:adjustViewBounds="true"
+                android:layout_below="@+id/article_name1"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:id="@+id/article_detail1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/article_image1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="#F9F5F4"
+                android:gravity="center_vertical"
+                android:text="BBC news with Stuart Mackintosh.1111111111111111111111111111111111111111111111A report by the UN says that countries must radically raise their ambitions for cutting greenhouse gases in order to prevent global temperatures rising to dangerous levels. It says nations need to triple plans to cut emissions over the next 12 years in order to keep global temperatures from rising by more than 2 degrees Celsius above pre-industrial levels.
+
+Voters in the US State of Mississippi are casting their ballots in a run-off for the last senate seat of the mid-term elections. They are choosing between the incumbent Cindy Hyde-Smith, the white Republican, and her black Democratic challenger Mike Espy in a campaign dominated by the topic of race.
+
+The Facebook executive Richard Allan has been quizzed in London by 24 parliamentarians from 9 countries at an international hearing over the company's use and treatment of personal data. Concerns over the social media giant's practices, the role of political efforts and possible interference in the 2016 Brexit referendum and US elections are among the topics being investigated.
+
+A court in Germany has sentenced a Russia-born German man to 14 years in jail for bombing a coach last year carrying the Borussia Dortmund football team. Sergej Wenergold was found guilty of 28 accounts of attempted murder.
+
+A court in Crimea has ordered the 12 of the Ukrainian servicemen captured at sea by Russian forces be held for two months. The remaining 12 will be brought before the court on Wednesday. They and their three naval vessels were seized on Sunday near Crimea.
+
+The final of South America's football leading club competition, the Copa Libertadores, will go ahead on the 8th or 9th of December, but at a neutral venue abroad. The second leg of the final was cancelled after River Plate fans attacked the Boca Junior's team bus on its way to the ground. Boca had wanted River Plate disqualified.
+
+BBC news." />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/playSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+            <Button
+                android:id="@+id/btnPlay"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Play"/>
+            <Button
+                android:id="@+id/btnPause"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Pause"/>
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Stop"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

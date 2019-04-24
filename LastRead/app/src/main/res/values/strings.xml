@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">英语流利阅读</string>
+    <string name="biaoti">这里是标题</string>
+    <string name="article1">BBC news with Stuart Mackintosh.</string>
 </resources>
