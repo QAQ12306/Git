@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:fitsSystemWindows="true"
     android:layout_gravity="center"
     android:orientation="vertical">
 
@@ -48,7 +49,7 @@
                 android:layout_marginBottom="5dp"
                 android:background="#F9F5F4"
                 android:gravity="center_vertical"
-                android:text="BBC news with Stuart Mackintosh.1111111111111111111111111111111111111111111111A report by the UN says that countries must radically raise their ambitions for cutting greenhouse gases in order to prevent global temperatures rising to dangerous levels. It says nations need to triple plans to cut emissions over the next 12 years in order to keep global temperatures from rising by more than 2 degrees Celsius above pre-industrial levels.
+                android:text="BBC news with Stuart Mackintosh.report by the UN says that countries must radically raise their ambitions for cutting greenhouse gases in order to prevent global temperatures rising to dangerous levels. It says nations need to triple plans to cut emissions over the next 12 years in order to keep global temperatures from rising by more than 2 degrees Celsius above pre-industrial levels.
 
 Voters in the US State of Mississippi are casting their ballots in a run-off for the last senate seat of the mid-term elections. They are choosing between the incumbent Cindy Hyde-Smith, the white Republican, and her black Democratic challenger Mike Espy in a campaign dominated by the topic of race.
 
@@ -68,7 +69,7 @@ BBC news." />
 
     </ScrollView>
 
-    <LinearLayout
+  <!--  <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -108,5 +109,107 @@ BBC news." />
 
 
     </LinearLayout>
+-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/music_name"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#EEF4F7"/>
+                <LinearLayout
+                    android:layout_below="@id/seekBar"
+                    android:layout_alignEnd="@id/seekBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/music_cur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/"/>
+                    <TextView
+                        android:id="@+id/music_length"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00BCD4">
+            <ImageButton
+                android:id="@+id/play"
+                android:src="@mipmap/bofang"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <ImageButton
+                android:id="@+id/pause"
+                android:src="@mipmap/pause"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <ImageButton
+                android:id="@+id/stop"
+                android:src="@mipmap/stop"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <ImageButton
+                    android:id="@+id/volume_plus"
+                    android:src="@mipmap/volume_increase"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageButton
+                    android:id="@+id/volume_decrease"
+                    android:src="@mipmap/volume_decrease"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
