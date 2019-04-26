@@ -12,9 +12,9 @@
         android:roundIcon="@drawable/ic_test"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data
-            android:name="com.google.android.actions"/>
-            <!--android:resource="@assets/litepal" />-->
+        <!--<meta-data-->
+            <!--android:name="com.google.android.actions"/>-->
+            <!--&lt;!&ndash;android:resource="@assets/litepal" />&ndash;&gt;-->
 
         <activity android:name=".MainActivity">
             <intent-filter>

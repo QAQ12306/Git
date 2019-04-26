@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/article_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         android:layout_below="@+id/article_name"
         android:layout_toRightOf="@+id/article_image"
         android:background="#DD2C11"
