@@ -54,19 +54,21 @@ public class ArticleDetailActivity extends AppCompatActivity implements View.OnC
      play = (ImageButton) findViewById(R.id.play);
      pause = (ImageButton) findViewById(R.id.pause);
      stop = (ImageButton) findViewById(R.id.stop);
-     volume_plus = (ImageButton) findViewById(R.id.volume_plus);
-     volume_decrease = (ImageButton) findViewById(R.id.volume_decrease);
+
      musicName = (TextView) findViewById(R.id.music_name);
      musicLength = (TextView) findViewById(R.id.music_length);
      musicCur = (TextView) findViewById(R.id.music_cur);
+
      seekBar = (SeekBar) findViewById(R.id.seekBar);
      seekBar.setOnSeekBarChangeListener(new MySeekBar());
+
      play.setOnClickListener(ArticleDetailActivity.this);
      pause.setOnClickListener(ArticleDetailActivity.this);
      stop.setOnClickListener(ArticleDetailActivity.this);
-     volume_plus.setOnClickListener(ArticleDetailActivity.this);
-     volume_decrease.setOnClickListener(ArticleDetailActivity.this);
-     if (ContextCompat.checkSelfPermission(ArticleDetailActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
+
+        currentPosition = mediaPlayer.getCurrentPosition();
+
+        if (ContextCompat.checkSelfPermission(ArticleDetailActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
          ActivityCompat.requestPermissions(ArticleDetailActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
      }else {
          initMediaPlayer();//初始化mediaplayer
@@ -89,23 +91,18 @@ public class ArticleDetailActivity extends AppCompatActivity implements View.OnC
             e.printStackTrace();
         }
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case 1: if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                initMediaPlayer();
-            } else {
-                Toast.makeText(ArticleDetailActivity.this,"denied access",Toast.LENGTH_SHORT).show(); finish(); } break; default:
-        }
-    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.play:
-                Toast.makeText(ArticleDetailActivity.this,"开始播放",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ArticleDetailActivity.this,"开始播放",Toast.LENGTH_SHORT).show();
                 if (!mediaPlayer.isPlaying()) {
                     mediaPlayer.start();//开始播放
-                     mediaPlayer.seekTo(currentPosition); //监听播放时回调函数
+                    //mediaPlayer.seekTo(currentPosition); //监听播放时回调函数
+                    if(!isSeekBarChanging){
+                        seekBar.setProgress(mediaPlayer.getCurrentPosition());
+                    }
                      timer = new Timer();
                      timer.schedule(new TimerTask() {
                          Runnable updateUI = new Runnable() {
@@ -125,7 +122,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements View.OnC
                 }
                 break;
                 case R.id.pause:
-                    Toast.makeText(ArticleDetailActivity.this,"暂停播放",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(ArticleDetailActivity.this,"暂停播放",Toast.LENGTH_SHORT).show();
                     if (mediaPlayer.isPlaying()) {
                         mediaPlayer.pause();//暂停播放
                          }
@@ -137,20 +134,6 @@ public class ArticleDetailActivity extends AppCompatActivity implements View.OnC
                              initMediaPlayer();
                         }
                         break;
-                        //音量加
-            case R.id.volume_plus:
-                maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,AudioManager.ADJUST_RAISE,AudioManager.FLAG_SHOW_UI);
-                currentVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-                Toast.makeText(ArticleDetailActivity.this,"音量增加,最大音量是：" + maxVolume + "，当前音量" + currentVolume, Toast.LENGTH_SHORT).show();
-                break;
-                //音量减
-            case R.id.volume_decrease:
-                maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,AudioManager.ADJUST_LOWER,AudioManager.FLAG_SHOW_UI);
-                currentVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-                Toast.makeText(ArticleDetailActivity.this,"音量减小,最大音量是：" + maxVolume + "，当前音量" + currentVolume, Toast.LENGTH_SHORT).show();
-                break;
                 default:
                     break;
         }

@@ -1,7 +1,6 @@
 package com.example.john.lastread;
 
-public
-class Article {
+public class Article {
     private String name;
     private int imageId;
     public Article(String name,int imageId){

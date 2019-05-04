@@ -16,19 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_toRightOf="@+id/article_image"
-        android:background="#FBFCFC"
+        android:background="#2196F3"
         android:gravity="center_vertical"
         />
-<!--
-    <TextView
-        android:id="@+id/article_detail"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/article_name"
-        android:layout_toRightOf="@+id/article_image"
-        android:background="#DD2C11"
-        android:gravity="center_vertical"
--->
 
-        />
 </RelativeLayout>
